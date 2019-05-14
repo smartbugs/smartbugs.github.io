@@ -38,6 +38,9 @@
             $(".jsUsername").attr("href", userPage);
             $(".jsUsername").html(username);
 
+            // Enable support for tables
+            showdown.setOption("tables", true);
+
             // Load markdown from the readme, render it and display.
             $.ajax({
                 url: `https://raw.githubusercontent.com/${username}/${repo}/master/README.md`,
@@ -60,6 +63,9 @@
         }
         a {
             color: #aa0000;
+        }
+        h2,h3 {
+            margin-top: 1em;
         }
         .logo {
             margin-bottom: 36px;
